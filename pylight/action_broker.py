@@ -1,5 +1,6 @@
 from typing import List
-from os import mkfifo, path
+from os import mkfifo, path, chmod
+import stat
 from dnry.srvhost.builder import SrvHostBase
 from dnry.config import IConfigSection
 
@@ -21,7 +22,6 @@ class ActionBroker(IActionBroker):
         return next(self._messages)
 
     def send_message(self, action: Action):
-        self._init_fifo()
         with open(self._fifo, 'w') as fd:
             fd.write(f"{action.serialize()}\n")
 
@@ -47,3 +47,4 @@ class ActionBroker(IActionBroker):
     def _init_fifo(self):
         if not path.exists(self._fifo):
             mkfifo(self._fifo)
+            chmod(self._fifo, stat.S_IRWXU | stat.S_IWGRP | stat.S_IWOTH)
