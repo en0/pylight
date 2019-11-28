@@ -3,15 +3,15 @@ from dnry.srvhost.builder import ISrvHostContext
 from dnry.config.yaml import YamlSource
 from dnry.config import IConfigFactory
 
-from pylightd.backlight import Backlight
-from pylightd.action_broker import ActionBroker
-from pylightd.backlight_manager import BacklightManager
-from pylightd.interface import IActionBroker, IBacklight, IBacklightManager
+from pylight.backlight import Backlight
+from pylight.action_broker import ActionBroker
+from pylight.backlight_manager import BacklightManager
+from pylight.interface import IActionBroker, IBacklight, IBacklightManager
 
 def setup_config(ctx: ISrvHostContext, conf: IConfigFactory):
     conf.add_source(YamlSource([
-        "./pylightd.yaml",
-        "/etc/pylight/pylightd.yaml"
+        "./pylight.yaml",
+        "/etc/pylight/pylight.yaml"
     ], True))
 
 

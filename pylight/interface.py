@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from pylightd.action import Action
+from pylight.action import Action
 
 
 class IActionBroker(ABC):

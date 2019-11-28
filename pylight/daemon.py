@@ -1,8 +1,8 @@
 from threading import Event
 from dnry.srvhost.builder import SrvHostBuilder, SrvHostBase, ISrvHost
 
-from pylightd.interface import IActionBroker, IBacklightManager
-from pylightd.configure import setup_config, setup_services
+from pylight.interface import IActionBroker, IBacklightManager
+from pylight.configure import setup_config, setup_services
 
 
 class ServiceHost(SrvHostBase):
@@ -13,7 +13,7 @@ class ServiceHost(SrvHostBase):
 
     @classmethod
     def create_builder(cls):
-        return SrvHostBuilder("pylightd") \
+        return SrvHostBuilder("pylight") \
             .config_services(lambda _, ioc: ioc.bind(ISrvHost, ServiceHost))
 
     def __init__(self, manager: IBacklightManager, broker: IActionBroker):

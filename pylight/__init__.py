@@ -1,4 +1,4 @@
-from pylightd.interface import IBacklight, IBacklightManager, IActionBroker
-from pylightd.backlight import Backlight
-from pylightd.backlight_manager import BacklightManager
-from pylightd.action import Action
+from pylight.interface import IBacklight, IBacklightManager, IActionBroker
+from pylight.backlight import Backlight
+from pylight.backlight_manager import BacklightManager
+from pylight.action import Action

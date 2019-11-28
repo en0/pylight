@@ -3,8 +3,8 @@ from os import mkfifo, path
 from dnry.srvhost.builder import SrvHostBase
 from dnry.config import IConfigSection
 
-from pylightd.interface import IActionBroker
-from pylightd.action import Action
+from pylight.interface import IActionBroker
+from pylight.action import Action
 
 
 class ActionBroker(IActionBroker):

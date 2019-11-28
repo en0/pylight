@@ -1,5 +1,5 @@
-from pylightd.interface import IBacklightManager, IBacklight
-from pylightd.action import Action
+from pylight.interface import IBacklightManager, IBacklight
+from pylight.action import Action
 
 
 class BacklightManager(IBacklightManager):

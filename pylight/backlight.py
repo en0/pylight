@@ -1,6 +1,6 @@
 from dnry.config import IConfigSection
 
-from pylightd.interface import IBacklight
+from pylight.interface import IBacklight
 
 
 class Backlight(IBacklight):

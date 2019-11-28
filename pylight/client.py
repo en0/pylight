@@ -1,9 +1,9 @@
 from argparse import ArgumentParser
 from dnry.srvhost.builder import SrvHostBuilder, SrvHostBase, ISrvHost
 
-from pylightd.interface import IActionBroker
-from pylightd.action import Action
-from pylightd.configure import setup_config, setup_services
+from pylight.interface import IActionBroker
+from pylight.action import Action
+from pylight.configure import setup_config, setup_services
 
 
 class ServiceHost(SrvHostBase):
