@@ -1,7 +1,11 @@
+Logging:
+    Level: DEBUG
+
 Backlight:
     Min: 10
     Max: 200
     File: /sys/class/backlight/intel_backlight/brightness
+
 Ipc:
     #Fifo: /var/run/pylight.fifo
     Fifo: ./pylight.fifo

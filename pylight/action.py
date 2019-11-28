@@ -20,3 +20,5 @@ class Action:
     def serialize(self) -> str:
         return f"{self.operator[0]}{self.value}"
 
+    def __repr__(self) -> str:
+        return f"<Action: op='{self.operator}', val='{self.value}'>"

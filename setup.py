@@ -20,8 +20,8 @@ setup(
     packages=['pylight'],
     entry_points={
         'console_scripts': [
-            'pylightd = pylight.daemon:main',
-            'pylightctl = pylight.client:main',
+            'pylightd = pylight.pylightd:main',
+            'pylightctl = pylight.pylightctl:main',
         ]
     },
     classifiers=[

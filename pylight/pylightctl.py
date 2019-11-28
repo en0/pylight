@@ -6,14 +6,14 @@ from pylight.action import Action
 from pylight.configure import setup_config, setup_services
 
 
-class ServiceHost(SrvHostBase):
+class PylightCtl(SrvHostBase):
 
     _broker: IActionBroker
 
     @classmethod
     def create_builder(cls):
         return SrvHostBuilder("pylightctl") \
-            .config_services(lambda _, ioc: ioc.bind(ISrvHost, ServiceHost))
+            .config_services(lambda _, ioc: ioc.bind(ISrvHost, PylightCtl))
 
     def __init__(self, broker: IActionBroker):
         self._broker = broker
@@ -30,7 +30,7 @@ class ServiceHost(SrvHostBase):
 
 
 def main():
-    ServiceHost \
+    PylightCtl \
         .create_builder() \
         .config_configuration(setup_config) \
         .config_services(setup_services) \
