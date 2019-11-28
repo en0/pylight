@@ -1,3 +1,4 @@
+import logging
 from argparse import ArgumentParser
 from dnry.srvhost.builder import SrvHostBuilder, SrvHostBase, ISrvHost
 
@@ -17,6 +18,7 @@ class PylightCtl(SrvHostBase):
 
     def __init__(self, broker: IActionBroker):
         self._broker = broker
+        self._log = logging.getLogger(__name__)
 
     def _get_opts(self):
         ap = ArgumentParser()
@@ -26,6 +28,10 @@ class PylightCtl(SrvHostBase):
     def run(self):
         opts = self._get_opts()
         action = Action.deserialize(opts.ACTION)
+        if action == None:
+            self._log.critical("Cannot parse action.")
+            exit(1)
+        self._log.info(f"Sending action {action}")
         self._broker.send_message(action)
 
 

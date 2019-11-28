@@ -1,9 +1,10 @@
 Logging:
     Level: DEBUG
+    #Path: /var/log/pylight
 
 Backlight:
-    Min: 10
-    Max: 200
+    Min: 5
+    Max: 250
     File: /sys/class/backlight/intel_backlight/brightness
 
 Ipc:
